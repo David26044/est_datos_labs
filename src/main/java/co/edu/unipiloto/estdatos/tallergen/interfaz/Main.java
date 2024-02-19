@@ -168,16 +168,16 @@ public class Main {
         System.out.println("* * * * * * * * * * * * * * * * ");
         System.out.println("<< Agregar camisa >>\n");
         System.out.println("¿Marca?");
-        Marca[] marcas= Camisa.Marca.values();
-        
+        Marca[] marcas = Camisa.Marca.values();
+
         for (int i = 0; i < marcas.length; i++) {
-            System.out.println("[" + (i+1) + "] " + marcas[i]);
+            System.out.println("[" + (i + 1) + "] " + marcas[i]);
         }
 
         int indice = Integer.parseInt(br.readLine());
 
-        Marca marca = marcas[indice-1];
-        
+        Marca marca = marcas[indice - 1];
+
         System.out.println("¿Talla?");
 
         Talla[] tallas = Talla.values();
@@ -216,16 +216,16 @@ public class Main {
         System.out.println("* * * * * * * * * * * * * * * * ");
         System.out.println("<< Agregar computador >>\n");
         System.out.println("¿Sistema operativo?");
-        SOperativo[] sOperativos= SOperativo.values();
-        
+        SOperativo[] sOperativos = SOperativo.values();
+
         for (int i = 0; i < sOperativos.length; i++) {
-            System.out.println("[" + (i+1) + "] " + sOperativos[i]);
+            System.out.println("[" + (i + 1) + "] " + sOperativos[i]);
         }
 
         int indice = Integer.parseInt(br.readLine());
 
-        SOperativo sOperativo = sOperativos[indice-1];
-        
+        SOperativo sOperativo = sOperativos[indice - 1];
+
         System.out.println("¿Gama? ");
 
         Gama[] gamas = Gama.values();
@@ -236,7 +236,7 @@ public class Main {
 
         indice = Integer.parseInt(br.readLine());
         Gama gama = gamas[indice - 1];
-        
+
         System.out.println("¿Precio?");
         double precio = Double.parseDouble(br.readLine().replace(",", "."));
 
@@ -251,7 +251,7 @@ public class Main {
         }
         System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
         System.out.println(" ");
-        
+
         menuInicial();
     }
 
@@ -267,7 +267,7 @@ public class Main {
         System.out.println("¿Número del casillero?");
         int num = Integer.parseInt(br.readLine());
 
-        Producto producto = casilleros.despachar(num);
+        Producto producto = (Producto) casilleros.despachar(num);
 
         if (producto == null) {
             System.out.println("El casillero con número " + num + " no contiene ningún producto o el casillero no existe, revise el estado de los casilleros");
